@@ -1738,20 +1738,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364049555afb740e7a3aa72572ca2da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Definition: {fileID: 11400000, guid: 35f5fcc7abf5b49ec9b20a320e4f1cae, type: 3}
+  Definition: {fileID: 11400000, guid: fd7949b0dff3049edb66d9d2b992afc3, type: 3}
 --- !u!4 &1589988641
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589988639}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.005998343, y: 0.919252, z: 0.29832128, w: 0.25679624}
   m_LocalPosition: {x: 0, y: -0.10500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -33.051003, y: 145.42201, z: 11.3}
 --- !u!1 &1595356061
 GameObject:
   m_ObjectHideFlags: 0
