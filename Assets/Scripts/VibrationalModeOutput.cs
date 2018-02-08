@@ -16,9 +16,10 @@ public class VibrationalModeOutput : MonoBehaviour
 		ModeObject = GetComponent<VibrationalModeGraphic> ();
 		SampleRate = AudioSettings.outputSampleRate;
 		Frequency = ModeObject.AudioFrequency;
-		AudioClip clip = AudioClip.Create("Audio", SampleRate * 2, 1, SampleRate, true, OnAudioRead, OnAudioSetPosition);
+		//AudioClip clip = AudioClip.Create("Audio", SampleRate * 2, 1, SampleRate, true, OnAudioRead, OnAudioSetPosition);
 		AudioSource audioSource = GetComponent<AudioSource>();
-		audioSource.clip = clip;
+		//audioSource.clip = clip;
+		audioSource.pitch = Frequency / 261.6f;
 		audioSource.Play();
 		SetVolume (0);
 	}

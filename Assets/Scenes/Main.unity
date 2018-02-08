@@ -1738,20 +1738,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364049555afb740e7a3aa72572ca2da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Definition: {fileID: 11400000, guid: 958cf0d775d1b441dac05d323ed0e9b4, type: 3}
+  Definition: {fileID: 11400000, guid: a04891927322f4e4a8f4b3bbaa0b7f65, type: 3}
 --- !u!4 &1589988641
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589988639}
-  m_LocalRotation: {x: 0.005998343, y: 0.919252, z: 0.29832128, w: 0.25679624}
+  m_LocalRotation: {x: 0.58114344, y: -0.54431075, z: 0.3468355, w: -0.4956848}
   m_LocalPosition: {x: 0, y: -0.10500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -33.051003, y: 145.42201, z: 11.3}
+  m_LocalEulerAnglesHint: {x: -11.453, y: 465.87, z: -85.086006}
 --- !u!1 &1595356061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,6 +2996,7 @@ MonoBehaviour:
   Source: 1
   Width: 20
   Scale: 100
+  SpectrumData: []
 --- !u!120 &1625877356
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -4392,6 +4393,7 @@ MonoBehaviour:
   Source: 0
   Width: 20
   Scale: 100
+  SpectrumData: []
 --- !u!120 &1812778536
 LineRenderer:
   m_ObjectHideFlags: 0
