@@ -18,6 +18,8 @@ public class MicrophoneInput : MonoBehaviour {
 
 	private AudioSource AudioSource;
 
+	public static MicrophoneInput Instance;
+
 	void Start() {
 
 		// Cache components
@@ -32,6 +34,7 @@ public class MicrophoneInput : MonoBehaviour {
 		NumberOfFrequencies = FrequencyToIndex (MaximumFrequency);
 		ReadSpectrum ();
 
+		Instance = this;
 
 
 	}

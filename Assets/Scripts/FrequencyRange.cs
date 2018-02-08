@@ -35,6 +35,13 @@ public class FrequencyRange {
 		return v / tot;
 	}
 
-
+	// Implements addition of frequency ranges
+	public static FrequencyRange operator +(FrequencyRange c1, FrequencyRange c2)
+	{
+		var data = new float[c1.FrequencyData.Length];
+		for (var i = 0; i < data.Length; i++)
+			data [i] = c1.FrequencyData[i] + c2.FrequencyData [i];
+		return new FrequencyRange (data, c1.MinimumFrequency, c1.MaximumFrequency);
+	}
 		
 }

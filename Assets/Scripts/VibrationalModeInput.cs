@@ -23,12 +23,11 @@ public class VibrationalModeInput : MonoBehaviour {
 			float freq = (1f * i / spectrum.Length) * maximumFrequency;
 			spectrum [i] = GaussianScale * Mathf.Exp (-Mathf.Pow (GaussianStrength * (freq - resonanceFrequency), 2));
 		}
-
 		ExcitationFrequency = new FrequencyRange (spectrum, 0, maximumFrequency);
 	}
 
 	void Update() {
-		var microphoneInput = GameObject.FindObjectOfType<MicrophoneInput> ();
+		var microphoneInput = MicrophoneInput.Instance;
 		if (microphoneInput != null) {
 			var newExcitation = FrequencyRange.Overlap (microphoneInput.Spectrum, ExcitationFrequency);
 			var mode = GetComponent<VibrationalModeGraphic> ().VibrationalMode;
