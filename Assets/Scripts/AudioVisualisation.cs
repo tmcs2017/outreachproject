@@ -25,7 +25,7 @@ public class AudioVisualisation : MonoBehaviour {
 	}
 
 	void LoadMoleculeSpectrum() {
-		var spectra = GameObject.FindObjectsOfType<VibrationalModeInput> ();
+		var spectra = GameObject.FindObjectsOfType<VibrationalModeGraphic> ();
 		var spectrum = spectra [0].ExcitationFrequency;
 		for (var i = 1; i < spectra.Length; i++)
 			spectrum = spectrum + spectra [i].ExcitationFrequency;

@@ -135,12 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 500e20962438b454280621c0fa0968b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExcitationFrequency:
-    FrequencyData: []
-    MinimumFrequency: 0
-    MaximumFrequency: 0
-  GaussianScale: 0.02
-  GaussianStrength: 0.4
 --- !u!114 &114676576572267404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,4 +161,10 @@ MonoBehaviour:
     Wavenumber: 0
     Displacements: []
     Excitation: 0
-  WavenumberToAudioFrequency: 0.25
+  ExcitationFrequency:
+    FrequencyData: []
+    MinimumFrequency: 0
+    MaximumFrequency: 0
+  WavenumberToAudioFrequency: 0.15
+  GaussianScale: 0.04
+  GaussianStrength: 2

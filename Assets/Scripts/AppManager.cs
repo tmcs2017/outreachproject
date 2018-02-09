@@ -10,6 +10,31 @@ public class AppManager : ScriptableObject {
 	/// Global instance, use AppManager.Instance to access this object
 	public static AppManager Instance = null;
 
+	[Header("Audio Input")]
+	public int BinSize = 4096;
+	public float MaximumFrequency = 256f;
+	public int SampleRate {
+		get {
+			return AudioSettings.outputSampleRate;
+		}
+	}
+	[HideInInspector]
+	public int NumberOfFrequencies;
+
+	public float IndexToFrequency(int index) {
+		return index * (SampleRate / 2f) / BinSize;;
+	}
+
+	public int FrequencyToIndex(float frequency) {
+		return (int) (frequency / (SampleRate / 2f) * BinSize);
+	}
+
+	void Awake() {
+		NumberOfFrequencies = FrequencyToIndex (MaximumFrequency);
+		Debug.Log (NumberOfFrequencies);
+	}
+
+	[Header("Prefabs")]
 
 	/// Prefabs used for constructing molecules. Assign this through the Editor
 	public GameObject MoleculeGraphicPrefab;
@@ -96,6 +121,7 @@ public class AppManager : ScriptableObject {
 			Debug.LogError ("Failed to find AppManager at Resources/Manager");
 			Application.Quit ();
 		}
+		AppManager.Instance.Awake ();
 	}
 
 }
