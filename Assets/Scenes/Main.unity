@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364049555afb740e7a3aa72572ca2da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Definition: {fileID: 11400000, guid: 728ba09dc8ddf4e899bfd24a0818f9b4, type: 3}
+  Definition: {fileID: 11400000, guid: 159d98270ef664972bcd072bfe00d51b, type: 3}
 --- !u!4 &1589988641
 Transform:
   m_ObjectHideFlags: 0
@@ -4211,7 +4211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1701091950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4223,15 +4223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276e361edba2e4df783d41748d4f1d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BinSize: 8192
   FourierWindow: 5
   Spectrum:
     FrequencyData: []
     MinimumFrequency: 0
     MaximumFrequency: 0
-  SampleRate: 44100
-  AutomaticSampleRate: 1
-  MaximumFrequency: 1024
 --- !u!4 &1701091951
 Transform:
   m_ObjectHideFlags: 0

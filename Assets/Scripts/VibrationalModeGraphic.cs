@@ -25,14 +25,17 @@ public class VibrationalModeGraphic : MonoBehaviour {
 		ExcitationFrequency = new FrequencyRange (spectrum, 0, maximumFrequency);
 	}
 
+	public bool RoundNote = false;
+
 	public float AudioFrequency {
 		get {
 			var freq = WavenumberToAudioFrequency * VibrationalMode.Wavenumber;
 			// Convert to note
-			float pitch = (Mathf.Round(69 + 12 * (Mathf.Log(freq/440f) / Mathf.Log(2f)))); 
-			var newFreq = 440f*Mathf.Pow(2,(pitch-69)/12f);
-			Debug.Log(newFreq + ", "+ freq);
-			return newFreq;
+			if(RoundNote) {
+				float pitch = (Mathf.Round(69 + 12 * (Mathf.Log(freq/440f) / Mathf.Log(2f)))); 
+				freq = 440f*Mathf.Pow(2,(pitch-69)/12f); 
+			}
+			return freq;
 		}
 	}
 

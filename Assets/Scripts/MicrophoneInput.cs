@@ -9,11 +9,13 @@ public class MicrophoneInput : MonoBehaviour {
 
 	public FrequencyRange Spectrum;
 
-	private int NumberOfFrequencies = 0;
-
 	private AudioSource AudioSource;
 
 	public static MicrophoneInput Instance;
+
+	void Awake() {
+		Instance = this;
+	}
 
 	void Start() {
 
@@ -24,9 +26,6 @@ public class MicrophoneInput : MonoBehaviour {
 		while (!(Microphone.GetPosition(null) > 0)){} // Wait until the recording has started
 		AudioSource.Play();
 		ReadSpectrum ();
-
-		Instance = this;
-
 
 	}
 
@@ -44,8 +43,8 @@ public class MicrophoneInput : MonoBehaviour {
 		AudioSource.GetSpectrumData(rawSpectrum, 0, FFTWindow.BlackmanHarris);
 		while (!(Microphone.GetPosition(null) > 0)){}
 
-		var spectrum = new float[NumberOfFrequencies];
-		Array.Copy (rawSpectrum, spectrum, NumberOfFrequencies);
+		var spectrum = new float[AppManager.Instance.NumberOfFrequencies];
+		Array.Copy (rawSpectrum, spectrum, AppManager.Instance.NumberOfFrequencies);
 		Spectrum = new FrequencyRange (spectrum, 0, AppManager.Instance.MaximumFrequency);
 		
 	}
