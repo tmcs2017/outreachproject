@@ -18,7 +18,6 @@ public class VibrationalModeGraphic : MonoBehaviour {
 		var spectrum = new float[AppManager.Instance.NumberOfFrequencies];
 		var maximumFrequency = AppManager.Instance.MaximumFrequency;
 		var resonanceFrequency = AudioFrequency;
-		Debug.Log (VibrationalMode.Wavenumber);
 		for (int i = 0; i < spectrum.Length; i++) {
 			float freq = (1f * i / spectrum.Length) * maximumFrequency;
 			spectrum [i] = GaussianScale * Mathf.Exp (-Mathf.Pow (GaussianStrength * (freq - resonanceFrequency), 2));
@@ -28,7 +27,12 @@ public class VibrationalModeGraphic : MonoBehaviour {
 
 	public float AudioFrequency {
 		get {
-			return WavenumberToAudioFrequency * VibrationalMode.Wavenumber;
+			var freq = WavenumberToAudioFrequency * VibrationalMode.Wavenumber;
+			// Convert to note
+			float pitch = (Mathf.Round(69 + 12 * (Mathf.Log(freq/440f) / Mathf.Log(2f)))); 
+			var newFreq = 440f*Mathf.Pow(2,(pitch-69)/12f);
+			Debug.Log(newFreq + ", "+ freq);
+			return newFreq;
 		}
 	}
 
