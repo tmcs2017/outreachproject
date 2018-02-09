@@ -1813,20 +1813,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364049555afb740e7a3aa72572ca2da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Definition: {fileID: 11400000, guid: 159d98270ef664972bcd072bfe00d51b, type: 3}
+  Definition: {fileID: 11400000, guid: 56575b983086e42b287a6cca51416259, type: 3}
 --- !u!4 &1589988641
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1589988639}
-  m_LocalRotation: {x: 0.58114344, y: -0.54431075, z: 0.3468355, w: -0.4956848}
+  m_LocalRotation: {x: 0.7274917, y: 0.07833091, z: 0.68139493, w: 0.017922543}
   m_LocalPosition: {x: 0, y: -0.10500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: -11.453, y: 465.87, z: -85.086006}
+  m_LocalEulerAnglesHint: {x: -4.6270003, y: 454.071, z: -187.98099}
 --- !u!1 &1595356061
 GameObject:
   m_ObjectHideFlags: 0

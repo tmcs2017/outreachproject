@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BinSize: 8192
   MaximumFrequency: 512
-  NumberOfFrequencies: 47
+  NumberOfFrequencies: 380
   MoleculeGraphicPrefab: {fileID: 1316005287596738, guid: 4e6424d6bfbce4506966bf6d3ba6b024,
     type: 2}
   AtomGraphicPrefab: {fileID: 1225283264699070, guid: 8e8c5557443cd426dabbd78e78a8905f,

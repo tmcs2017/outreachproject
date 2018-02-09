@@ -165,6 +165,7 @@ MonoBehaviour:
     FrequencyData: []
     MinimumFrequency: 0
     MaximumFrequency: 0
-  WavenumberToAudioFrequency: 0.05
-  GaussianScale: 0.04
-  GaussianStrength: 2
+  WavenumberToAudioFrequency: 0.1
+  GaussianScale: 0.02
+  GaussianStrength: 0.4
+  RoundNote: 0
