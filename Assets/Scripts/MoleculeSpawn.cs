@@ -24,20 +24,9 @@ public class MoleculeSpawn : MonoBehaviour {
 			// Draw the ball
 			Gizmos.DrawSphere(worldPosition, element.Radius);
 		}
-		foreach (var bond in Definition.Bonds) {
-			var atom1 = Definition.Atoms [bond.AtomIndex1];
-			var atom2 = Definition.Atoms [bond.AtomIndex2];
-			// Convert position relative to molecule to position relative to global axes
-			var atomPosition1 = this.transform.TransformPoint (atom1.Position);
-			var atomPosition2 = this.transform.TransformPoint (atom2.Position);
-			// Set the color
-			Gizmos.color = atom1.Element.Color;
-			// Draw the line
-			Gizmos.DrawLine(atomPosition1, atomPosition2);
-		}
 	}
 
-	public void Start() {
+	public void Awake() {
 		var molecule = AppManager.Instance.CreateMolecule (Definition);
 		AppManager.Instance.CreateMoleculeGraphic (molecule, this.transform.position, this.transform.rotation);
 	}

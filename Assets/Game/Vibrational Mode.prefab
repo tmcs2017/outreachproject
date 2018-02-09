@@ -167,4 +167,4 @@ MonoBehaviour:
     Wavenumber: 0
     Displacements: []
     Excitation: 0
-  WavenumberToAudioFrequency: 0.14
+  WavenumberToAudioFrequency: 0.25
