@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51930a7b7cd374e49923572f03a8f2c9, type: 3}
-  m_Name: Oxygen
+  m_Name: Phosphorus
   m_EditorClassIdentifier: Assembly-CSharp::Element
-  AtomicNumber: 8
-  Color: {r: 0.92549026, g: 0.24313727, b: 0.14509805, a: 1}
+  AtomicNumber: 15
+  Color: {r: 0.9490197, g: 0.60784316, b: 0.22352943, a: 1}
   Radius: 0.8
