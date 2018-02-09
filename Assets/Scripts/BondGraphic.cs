@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Component for an object with represents a Bond Graphic
 public class BondGraphic : MonoBehaviour {
 
 	public Transform BondPart1;
@@ -10,11 +11,11 @@ public class BondGraphic : MonoBehaviour {
 	public GameObject Atom1;
 	public GameObject Atom2;
 
-	public void SetAtoms(GameObject atom1, GameObject atom2, Color color1, Color color2) {
+	public void SetAtoms(GameObject atom1, GameObject atom2) {
 		Atom1 = atom1;
 		Atom2 = atom2;
-		BondPart1.GetComponent<Renderer>().material.color = color1;
-		BondPart2.GetComponent<Renderer>().material.color = color2;
+		BondPart1.GetComponent<Renderer>().material.color = atom1.GetComponent<Renderer>().material.color;
+		BondPart2.GetComponent<Renderer>().material.color = atom2.GetComponent<Renderer>().material.color;
 	}
 		
 	public void Update() {

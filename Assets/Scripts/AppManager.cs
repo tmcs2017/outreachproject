@@ -24,6 +24,8 @@ public class AppManager : ScriptableObject {
 
 		moleculeObject.SendMessage ("OnSetMolecule", molecule, SendMessageOptions.DontRequireReceiver);
 
+		Dictionary<Atom, GameObject> Atoms = new Dictionary<Atom, GameObject> ();
+
 		foreach (var atom in molecule.Atoms) {
 			
 			var atomObject = GameObject.Instantiate (
@@ -32,6 +34,7 @@ public class AppManager : ScriptableObject {
 				moleculeObject.transform.rotation, 
 				moleculeObject.transform
 			);
+			Atoms.Add (atom, atomObject);
 			atomObject.SendMessage ("OnSetAtom", atom, SendMessageOptions.DontRequireReceiver);
 
 		}
@@ -44,6 +47,16 @@ public class AppManager : ScriptableObject {
 			);
 			modeObject.SendMessage ("OnSetMode", mode, SendMessageOptions.DontRequireReceiver);
 
+		}
+
+		foreach (var bond in molecule.Bonds) {
+
+			var bondObject = GameObject.Instantiate (
+				BondGraphicPrefab, 
+				moleculeObject.transform
+			);
+			bondObject.SendMessage ("OnSetBond", bond, SendMessageOptions.DontRequireReceiver);
+			bondObject.GetComponent<BondGraphic> ().SetAtoms (Atoms [bond.Atom1], Atoms [bond.Atom2]);
 		}
 	}
 		
@@ -60,6 +73,11 @@ public class AppManager : ScriptableObject {
 		foreach (var modeDefinition in definition.VibrationalModes) {
 			var mode = new VibrationalMode (molecule, modeDefinition);
 			molecule.VibrationalModes.Add (mode);
+		}
+
+		foreach (var bondDefinition in definition.Bonds) {
+			var bond = new Bond (molecule, bondDefinition);
+			molecule.Bonds.Add (bond);
 		}
 
 		return molecule;

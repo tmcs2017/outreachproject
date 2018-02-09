@@ -29,6 +29,16 @@ public class LogFileImporter : ScriptedImporter
 
 			modeParser.ParseLine (molecule, line);
 
+			if (molecule.VibrationalModes.Count > 0) {
+				var regexBond = " ! R\\d+ +R\\((\\d+),(\\d+)\\)";
+				var match = Regex.Match (line, regexBond);
+				if (match.Success) {
+					var atom1 = int.Parse (match.Groups [1].Value) - 1;
+					var atom2 = int.Parse (match.Groups [2].Value) - 1;
+					molecule.Bonds.Add (new BondDefinition () { AtomIndex1 = atom1, AtomIndex2 = atom2 });
+				}
+			}
+
 		}
 
 		ctx.AddObjectToAsset ("Data", molecule);

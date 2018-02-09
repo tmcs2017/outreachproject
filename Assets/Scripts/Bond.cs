@@ -9,6 +9,9 @@ public class Bond {
 	public Atom Atom1;
 	public Atom Atom2;
 
+	public Bond(Molecule molecule, BondDefinition def) : this(molecule, molecule.Atoms[def.AtomIndex1], molecule.Atoms[def.AtomIndex2]) {
+	}
+
 	public Bond(Molecule molecule, Atom atom1, Atom atom2) {
 		this.Molecule = molecule;
 		this.Atom1 = atom1;
