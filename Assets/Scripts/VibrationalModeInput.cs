@@ -24,8 +24,9 @@ public class VibrationalModeInput : MonoBehaviour {
 		if (microphoneInput != null) {
 			var newExcitation = FrequencyRange.Overlap (microphoneInput.Spectrum, ModeGraphic.ExcitationFrequency);
 			var mode = ModeGraphic.VibrationalMode;
+			var target = Mathf.Clamp01 (newExcitation);
 			mode.Excitation = 
-				Mathf.MoveTowards(mode.Excitation, Mathf.Clamp01(newExcitation), Time.deltaTime * 2f);
+				Mathf.MoveTowards(mode.Excitation, target, (target > mode.Excitation ? 1f : 0.25f) * Time.deltaTime * 2f);
 		}
 	}
 }

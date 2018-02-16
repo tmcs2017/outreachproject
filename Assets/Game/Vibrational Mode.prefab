@@ -168,4 +168,4 @@ MonoBehaviour:
   WavenumberToAudioFrequency: 0.1
   GaussianScale: 0.02
   GaussianStrength: 0.4
-  RoundNote: 0
+  RoundNote: 1

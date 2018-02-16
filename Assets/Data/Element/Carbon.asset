@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Element
   AtomicNumber: 6
   Color: {r: 0.44117647, g: 0.44117647, b: 0.44117647, a: 1}
-  Radius: 0.6
+  Radius: 0.8
