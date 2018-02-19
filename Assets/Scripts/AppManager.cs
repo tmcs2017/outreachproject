@@ -52,11 +52,11 @@ public class AppManager : ScriptableObject {
 		Dictionary<Atom, GameObject> Atoms = new Dictionary<Atom, GameObject> ();
 
 		foreach (var atom in molecule.Atoms) {
-			
+
 			var atomObject = GameObject.Instantiate (
-				AtomGraphicPrefab, 
+				AtomGraphicPrefab,
 				moleculeObject.transform.TransformPoint(atom.MolecularPosition),
-				moleculeObject.transform.rotation, 
+				moleculeObject.transform.rotation,
 				moleculeObject.transform
 			);
 			Atoms.Add (atom, atomObject);
@@ -65,9 +65,9 @@ public class AppManager : ScriptableObject {
 		}
 
 		foreach (var mode in molecule.VibrationalModes) {
-			
+
 			var modeObject = GameObject.Instantiate (
-				VibrationalModePrefab, 
+				VibrationalModePrefab,
 				moleculeObject.transform
 			);
 			modeObject.SendMessage ("OnSetMode", mode, SendMessageOptions.DontRequireReceiver);
@@ -77,14 +77,19 @@ public class AppManager : ScriptableObject {
 		foreach (var bond in molecule.Bonds) {
 
 			var bondObject = GameObject.Instantiate (
-				BondGraphicPrefab, 
+				BondGraphicPrefab,
 				moleculeObject.transform
 			);
 			bondObject.SendMessage ("OnSetBond", bond, SendMessageOptions.DontRequireReceiver);
 			bondObject.GetComponent<BondGraphic> ().SetAtoms (Atoms [bond.Atom1], Atoms [bond.Atom2]);
 		}
+
+		moleculeObject.AddComponent<MoleculeCollider> ();
+		moleculeObject.AddComponent<RotateMolecule> ();
+		moleculeObject.AddComponent<MoveMolecule> ();
+		moleculeObject.AddComponent<ZoomMolecule> ();
 	}
-		
+
 	/// Creates a molecule from a definition. NOTE: Does not actually create it in game, for this then call CreateMoleculeGraphic
 	public Molecule CreateMolecule(MoleculeDefinition definition) {
 
@@ -107,7 +112,7 @@ public class AppManager : ScriptableObject {
 
 		return molecule;
 	}
-		
+
 	private static AppManager FindAppManager() {
 		return Resources.Load<AppManager>("Manager");
 	}

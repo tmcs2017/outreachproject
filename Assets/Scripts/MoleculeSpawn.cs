@@ -5,9 +5,11 @@ using UnityEngine;
 /// <summary>
 /// Creates a molecule at runtime
 /// </summary>
+
 public class MoleculeSpawn : MonoBehaviour {
 
 	public MoleculeDefinition Definition;
+	public Molecule molecule;
 
 	// Draws a ball-and-stick model in the editor, to represent what the molecule will look like
 	public void OnDrawGizmos() {
@@ -27,7 +29,8 @@ public class MoleculeSpawn : MonoBehaviour {
 	}
 
 	public void Awake() {
-		var molecule = AppManager.Instance.CreateMolecule (Definition);
+		
+		molecule = AppManager.Instance.CreateMolecule (Definition);
 		AppManager.Instance.CreateMoleculeGraphic (molecule, this.transform.position, this.transform.rotation);
 	}
 
