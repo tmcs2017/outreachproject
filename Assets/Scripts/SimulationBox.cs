@@ -1,0 +1,48 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// Component that contains particles bouncing around in a cool manner
+public class SimulationBox : MonoBehaviour {
+
+	public List<SimulationParticle> Particles = new List<SimulationParticle>();
+
+	public Vector2 BoxSize = Vector2.one;
+
+	public float BoxContainmentStrength = 1f;
+
+	// Draw the box in the editor for easier visualisation
+	void OnDrawGizmos() {
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireCube (Vector3.zero, BoxSize);
+		Gizmos.color = Color.white;
+	}
+
+	void Awake() {
+		foreach (var particle in Particles)
+			particle.Box = this;
+	}
+
+	public void AddParticle(SimulationParticle particle)
+	{
+		Particles.Add (particle);
+		particle.Box = this;
+	}
+
+	// Randomly chooses a velocity that prevents the particle leaving the screen
+	public Vector2 GetBoxContainmentForce(Vector2 particlePosition) {
+		return - BoxContainmentStrength * new Vector2 (Mathf.Pow (particlePosition.x * 2f / BoxSize.x, 3f), Mathf.Pow (particlePosition.y * 2f / BoxSize.y, 3f));
+	}
+
+	public Vector2 GetRepulsiveForce(SimulationParticle particle) {
+		Vector2 force = Vector2.zero;
+		foreach(var otherParticle in Particles) {
+			if (particle == otherParticle)
+				continue;
+			Vector2 seperation = otherParticle.transform.localPosition - particle.transform.localPosition;
+			force += -seperation / Mathf.Pow (seperation.magnitude, 2f) - 4f * seperation / Mathf.Pow (seperation.magnitude - 1f, 4f);
+		}
+		return force;
+	}
+
+}
