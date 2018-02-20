@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 518496680}
   - component: {fileID: 518496679}
   - component: {fileID: 518496681}
+  - component: {fileID: 518496684}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -152,7 +153,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518496678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -220,6 +221,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &518496684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518496678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &522981234
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +244,7 @@ GameObject:
   - component: {fileID: 522981236}
   - component: {fileID: 522981235}
   - component: {fileID: 522981237}
+  - component: {fileID: 522981240}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -259,7 +272,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522981234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -327,6 +340,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &522981240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522981234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855096388
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +363,7 @@ GameObject:
   - component: {fileID: 855096390}
   - component: {fileID: 855096389}
   - component: {fileID: 855096391}
+  - component: {fileID: 855096394}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -366,7 +391,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855096388}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -434,6 +459,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &855096394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855096388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1168694303
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +555,7 @@ GameObject:
   - component: {fileID: 1599007173}
   - component: {fileID: 1599007172}
   - component: {fileID: 1599007174}
+  - component: {fileID: 1599007177}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -546,7 +583,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599007171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -614,6 +651,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1599007177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599007171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1611788315
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611788317}
   - component: {fileID: 1611788316}
+  - component: {fileID: 1611788318}
   m_Layer: 0
   m_Name: Simulation Box
   m_TagString: Untagged
@@ -662,6 +711,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611788318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611788315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec59467462db4a5b9d1897800fb4adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Definitions:
+  - {fileID: 11400000, guid: fd7949b0dff3049edb66d9d2b992afc3, type: 3}
+  - {fileID: 11400000, guid: 56575b983086e42b287a6cca51416259, type: 3}
+  - {fileID: 11400000, guid: 936c5fe8dfdaf49cd9d45a419582643c, type: 3}
+  - {fileID: 11400000, guid: ad499ea3d867d4b59b59922037554dd9, type: 3}
+  - {fileID: 11400000, guid: 728ba09dc8ddf4e899bfd24a0818f9b4, type: 3}
 --- !u!1 &1703161784
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +740,7 @@ GameObject:
   - component: {fileID: 1703161786}
   - component: {fileID: 1703161785}
   - component: {fileID: 1703161787}
+  - component: {fileID: 1703161790}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -701,7 +768,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703161784}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -769,6 +836,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1703161790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703161784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1939843765
 GameObject:
   m_ObjectHideFlags: 0

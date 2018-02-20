@@ -43,7 +43,7 @@ public class AppManager : ScriptableObject {
 	public GameObject VibrationalModePrefab;
 
 	/// Creates an ingame visualisation of a molecule at a certain position and rotation
-	public void CreateMoleculeGraphic(Molecule molecule, Vector3 position, Quaternion rotation) {
+	public GameObject CreateMoleculeGraphic(Molecule molecule, Vector3 position, Quaternion rotation) {
 
 		var moleculeObject = GameObject.Instantiate (MoleculeGraphicPrefab, position, rotation);
 
@@ -88,6 +88,8 @@ public class AppManager : ScriptableObject {
 		moleculeObject.AddComponent<RotateMolecule> ();
 		moleculeObject.AddComponent<MoveMolecule> ();
 		moleculeObject.AddComponent<ZoomMolecule> ();
+
+		return moleculeObject;
 	}
 
 	/// Creates a molecule from a definition. NOTE: Does not actually create it in game, for this then call CreateMoleculeGraphic
