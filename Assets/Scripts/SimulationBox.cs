@@ -10,6 +10,7 @@ public class SimulationBox : MonoBehaviour {
 	public Vector2 BoxSize = Vector2.one;
 
 	public float BoxContainmentStrength = 1f;
+	public float RepulsionStrength = 1f;
 
 	// Draw the box in the editor for easier visualisation
 	void OnDrawGizmos() {
@@ -40,7 +41,7 @@ public class SimulationBox : MonoBehaviour {
 			if (particle == otherParticle)
 				continue;
 			Vector2 seperation = otherParticle.transform.localPosition - particle.transform.localPosition;
-			force += -seperation / Mathf.Pow (seperation.magnitude/particle.Radius, 2f) - 4f * seperation / Mathf.Pow (seperation.magnitude - particle.Radius, 4f);
+			force += RepulsionStrength * -seperation / Mathf.Pow (seperation.magnitude/particle.Radius, 2f) - RepulsionStrength * 4f * seperation / Mathf.Pow (seperation.magnitude - particle.Radius, 4f);
 		}
 		return force;
 	}

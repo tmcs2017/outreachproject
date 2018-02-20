@@ -36,7 +36,7 @@ public class SimulationParticle : MonoBehaviour {
 		force += Box.GetBoxContainmentForce (this.transform.localPosition);
 		force += Velocity * Vector2.Lerp (CurrentDirection, DesiredDirection, CurrentTime); 
 		force += Box.GetRepulsiveForce (this);
-		this.GetComponent<Rigidbody2D> ().AddForce (force * Time.deltaTime, ForceMode2D.Impulse);
+		this.GetComponent<Rigidbody> ().AddForce (force * Time.deltaTime, ForceMode.Impulse);
 	}
 
 	public float Radius = 1f;

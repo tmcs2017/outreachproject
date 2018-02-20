@@ -124,8 +124,9 @@ GameObject:
   - component: {fileID: 518496682}
   - component: {fileID: 518496680}
   - component: {fileID: 518496679}
-  - component: {fileID: 518496681}
   - component: {fileID: 518496684}
+  - component: {fileID: 518496685}
+  - component: {fileID: 518496681}
   m_Layer: 0
   m_Name: Sphere (4)
   m_TagString: Untagged
@@ -182,26 +183,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!50 &518496681
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &518496681
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518496678}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 8
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!33 &518496682
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -216,7 +212,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 518496678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.44, y: -1.06, z: 0}
+  m_LocalPosition: {x: -9.94, y: -4.39, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -233,6 +229,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &518496685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 518496678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.2
+  AlternatingTime: 2
 --- !u!1 &522981234
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,8 +255,9 @@ GameObject:
   - component: {fileID: 522981238}
   - component: {fileID: 522981236}
   - component: {fileID: 522981235}
-  - component: {fileID: 522981237}
   - component: {fileID: 522981240}
+  - component: {fileID: 522981241}
+  - component: {fileID: 522981237}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -302,26 +314,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!50 &522981237
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &522981237
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522981234}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 8
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!33 &522981238
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -336,7 +343,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522981234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.53, y: -2.38, z: 0}
+  m_LocalPosition: {x: 9.95, y: -4.22, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -353,6 +360,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &522981241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 522981234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.2
+  AlternatingTime: 2
 --- !u!1 &855096388
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,8 +386,9 @@ GameObject:
   - component: {fileID: 855096392}
   - component: {fileID: 855096390}
   - component: {fileID: 855096389}
-  - component: {fileID: 855096391}
   - component: {fileID: 855096394}
+  - component: {fileID: 855096395}
+  - component: {fileID: 855096391}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -422,26 +445,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!50 &855096391
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &855096391
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855096388}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 8
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!33 &855096392
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -456,7 +474,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855096388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.53, y: 1.93, z: 0}
+  m_LocalPosition: {x: 8.3, y: 3.94, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -473,6 +491,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &855096395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855096388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.2
+  AlternatingTime: 2
 --- !u!1 &1168694303
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,8 +590,9 @@ GameObject:
   - component: {fileID: 1599007175}
   - component: {fileID: 1599007173}
   - component: {fileID: 1599007172}
-  - component: {fileID: 1599007174}
   - component: {fileID: 1599007177}
+  - component: {fileID: 1599007178}
+  - component: {fileID: 1599007174}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -615,26 +649,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!50 &1599007174
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &1599007174
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599007171}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 8
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!33 &1599007175
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -666,6 +695,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1599007178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1599007171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.2
+  AlternatingTime: 2
 --- !u!1 &1611788315
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,8 +744,9 @@ MonoBehaviour:
   - {fileID: 522981235}
   - {fileID: 1703161785}
   - {fileID: 518496679}
-  BoxSize: {x: 20, y: 10}
-  BoxContainmentStrength: 6
+  BoxSize: {x: 30, y: 15}
+  BoxContainmentStrength: 8
+  RepulsionStrength: 1
 --- !u!4 &1611788317
 Transform:
   m_ObjectHideFlags: 0
@@ -730,7 +775,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fd7949b0dff3049edb66d9d2b992afc3, type: 3}
   - {fileID: 11400000, guid: 56575b983086e42b287a6cca51416259, type: 3}
   - {fileID: 11400000, guid: 936c5fe8dfdaf49cd9d45a419582643c, type: 3}
-  - {fileID: 11400000, guid: ad499ea3d867d4b59b59922037554dd9, type: 3}
+  - {fileID: 11400000, guid: 159d98270ef664972bcd072bfe00d51b, type: 3}
   - {fileID: 11400000, guid: 728ba09dc8ddf4e899bfd24a0818f9b4, type: 3}
 --- !u!1 &1703161784
 GameObject:
@@ -743,8 +788,9 @@ GameObject:
   - component: {fileID: 1703161788}
   - component: {fileID: 1703161786}
   - component: {fileID: 1703161785}
-  - component: {fileID: 1703161787}
   - component: {fileID: 1703161790}
+  - component: {fileID: 1703161791}
+  - component: {fileID: 1703161787}
   m_Layer: 0
   m_Name: Sphere (3)
   m_TagString: Untagged
@@ -801,26 +847,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!50 &1703161787
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &1703161787
+Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703161784}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1
-  m_LinearDrag: 0.2
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 8
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!33 &1703161788
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -835,7 +876,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703161784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.83, y: 2.62, z: 0}
+  m_LocalPosition: {x: -9.42, y: 4.62, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -852,6 +893,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1703161791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703161784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.2
+  AlternatingTime: 2
 --- !u!1 &1939843765
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +983,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1939843765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

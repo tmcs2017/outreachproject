@@ -9,6 +9,7 @@ public class MoleculeCollider : MonoBehaviour {
 		sphere = gameObject.AddComponent<SphereCollider>();
 		sphere.center = Vector3.zero;
 		sphere.radius = 3.0f;
+		sphere.isTrigger = true;
 	}
 
 }
