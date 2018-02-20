@@ -38,4 +38,11 @@ public class SimulationParticle : MonoBehaviour {
 		force += Box.GetRepulsiveForce (this);
 		this.GetComponent<Rigidbody2D> ().AddForce (force * Time.deltaTime, ForceMode2D.Impulse);
 	}
+
+	public float Radius = 1f;
+
+	void OnDrawGizmos() {
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(this.transform.position, Radius);
+	}
 }

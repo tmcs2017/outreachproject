@@ -147,6 +147,7 @@ MonoBehaviour:
   Box: {fileID: 0}
   Velocity: 1
   AlternatingTime: 4
+  Radius: 1
 --- !u!23 &518496680
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   Box: {fileID: 0}
   Velocity: 1
   AlternatingTime: 4
+  Radius: 1
 --- !u!23 &522981236
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -385,6 +387,7 @@ MonoBehaviour:
   Box: {fileID: 0}
   Velocity: 1
   AlternatingTime: 4
+  Radius: 1
 --- !u!23 &855096390
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -577,6 +580,7 @@ MonoBehaviour:
   Box: {fileID: 0}
   Velocity: 1
   AlternatingTime: 4
+  Radius: 1
 --- !u!23 &1599007173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -762,6 +766,7 @@ MonoBehaviour:
   Box: {fileID: 0}
   Velocity: 1
   AlternatingTime: 4
+  Radius: 1
 --- !u!23 &1703161786
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class SimulationBox : MonoBehaviour {
 			if (particle == otherParticle)
 				continue;
 			Vector2 seperation = otherParticle.transform.localPosition - particle.transform.localPosition;
-			force += -seperation / Mathf.Pow (seperation.magnitude, 2f) - 4f * seperation / Mathf.Pow (seperation.magnitude - 1f, 4f);
+			force += -seperation / Mathf.Pow (seperation.magnitude/particle.Radius, 2f) - 4f * seperation / Mathf.Pow (seperation.magnitude - particle.Radius, 4f);
 		}
 		return force;
 	}
