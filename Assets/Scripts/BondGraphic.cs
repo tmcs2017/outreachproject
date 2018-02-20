@@ -14,26 +14,23 @@ public class BondGraphic : MonoBehaviour {
 	public void SetAtoms(GameObject atom1, GameObject atom2) {
 		Atom1 = atom1;
 		Atom2 = atom2;
-		BondPart1.GetComponent<Renderer>().material.color = atom1.GetComponent<Renderer>().material.color;
-		BondPart2.GetComponent<Renderer>().material.color = atom2.GetComponent<Renderer>().material.color;
+		BondPart1.GetComponent<Renderer>().material.color = atom2.GetComponent<Renderer>().material.color;
+		BondPart2.GetComponent<Renderer>().material.color = atom1.GetComponent<Renderer>().material.color;
 	}
 
 	public void Update() {
-		Vector3 Position1 = Atom1.transform.position;
-		Vector3 Position2 = Atom2.transform.position;
-		Vector3 Midpoint = 0.5f * (Position1 + Position2);
-		float length = (Position1 - Midpoint).magnitude;
-		//scale of the whole molecule
-		float scale = Atom1.transform.parent.localScale[1];
+		var moleculeParent = Atom1.transform.parent;
 
-		BondPart1.transform.position = 0.5f * (Position1 + Midpoint);
-		BondPart2.transform.position = 0.5f * (Position2 + Midpoint);
-		//uses the scale of the parent molecule to resize during zoom
-		BondPart1.transform.localScale = new Vector3 (0.3f, length/(2f * scale), 0.3f);
-		BondPart2.transform.localScale = new Vector3 (0.3f, length/(2f * scale), 0.3f);
+		Vector3 Position1 = moleculeParent.InverseTransformPoint(Atom1.transform.position); // Local position of Atom 1
+		Vector3 Position2 = moleculeParent.InverseTransformPoint(Atom2.transform.position); // Local position of Atom 2;
+		Vector3 Midpoint = 0.5f * (Position1 + Position2); // Local midpoint of bond
+		float length = (Position1 - Midpoint).magnitude; // Local distance between midpoint and atom posiiton
+
+		this.transform.localPosition = Midpoint;
+		this.transform.localScale = new Vector3 (0.4f, length, 0.4f);
+	
 		var rotation = Quaternion.FromToRotation (Vector3.up, (Position2 - Position1).normalized);
-		BondPart1.transform.rotation = rotation;
-		BondPart2.transform.rotation = rotation;
+		this.transform.localRotation = rotation;
 	}
 
 }
