@@ -84,11 +84,6 @@ public class AppManager : ScriptableObject {
 			bondObject.GetComponent<BondGraphic> ().SetAtoms (Atoms [bond.Atom1], Atoms [bond.Atom2]);
 		}
 
-		moleculeObject.AddComponent<MoleculeCollider> ();
-		moleculeObject.AddComponent<RotateMolecule> ();
-		moleculeObject.AddComponent<MoveMolecule> ();
-		moleculeObject.AddComponent<ZoomMolecule> ();
-
 		return moleculeObject;
 	}
 
