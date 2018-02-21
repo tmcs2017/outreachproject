@@ -12,8 +12,6 @@ public class SimulationBox : MonoBehaviour {
 	public float BoxContainmentStrength = 1f;
 	public float RepulsionStrength = 1f;
 
-	public RectTransform UIHighlightParent;
-	public RectTransform UIHighlightPrefab;
 
 
 	// Draw the box in the editor for easier visualisation
@@ -33,9 +31,6 @@ public class SimulationBox : MonoBehaviour {
 		if(!Particles.Contains(particle))
 			Particles.Add (particle);
 		particle.Box = this;
-		var ui = GameObject.Instantiate (UIHighlightPrefab, UIHighlightParent);
-		ui.GetComponent<UIMoleculeHighlight> ().SetMolecule (particle);
-		ui.gameObject.SetActive (true);
 	}
 
 	// Randomly chooses a velocity that prevents the particle leaving the screen

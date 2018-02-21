@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class MoleculeSelectionItem : MonoBehaviour {
 
+	public MoleculeDefinition Value;
+
 	public void SetMolecule(MoleculeDefinition definition) {
+
+		this.Value = definition;
+
+
 		var molecule = AppManager.Instance.CreateMolecule (definition);
 		var unityMolecule = AppManager.Instance.CreateMoleculeGraphic(molecule, this.transform.position, this.transform.rotation);
 		unityMolecule.transform.parent = this.transform;
