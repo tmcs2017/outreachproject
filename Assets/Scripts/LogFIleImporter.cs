@@ -12,6 +12,9 @@ using System;
 [ScriptedImporter(1, "log")]
 public class LogFileImporter : ScriptedImporter
 {
+	public string MoleculeName = "";
+	public string MoleculeDescription = "";
+
 	public override void OnImportAsset(AssetImportContext ctx)
 	{
 		var lines = File.ReadAllLines (ctx.assetPath);
@@ -23,6 +26,8 @@ public class LogFileImporter : ScriptedImporter
 		var modeParser = new ModeParser ();
 
 		MoleculeDefinition molecule = new MoleculeDefinition ();
+		molecule.Name = MoleculeName;
+		molecule.Description = MoleculeDescription;
 
 		foreach (var line in lines) {
 			
@@ -31,7 +36,7 @@ public class LogFileImporter : ScriptedImporter
 			modeParser.ParseLine (molecule, line);
 
 			if (molecule.VibrationalModes.Count > 0) {
-				var regexBond = " ! R\\d+ +R\\((\\d+),(\\d+)\\)";
+				var regexBond = @" ! R\d+ +R\((\d+),(\d+)\)";
 				var match = Regex.Match (line, regexBond);
 				if (match.Success) {
 					var atom1 = int.Parse (match.Groups [1].Value) - 1;
