@@ -1289,11 +1289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedMolecule: {fileID: 0}
   Definitions:
-  - {fileID: 11400000, guid: fd7949b0dff3049edb66d9d2b992afc3, type: 3}
-  - {fileID: 11400000, guid: 56575b983086e42b287a6cca51416259, type: 3}
+  - {fileID: 11400000, guid: 8e7b2902b9da741549b13505788a4de4, type: 3}
+  - {fileID: 11400000, guid: dcdda1977e5bd4ee899fa9e9db43bd42, type: 3}
   - {fileID: 11400000, guid: 936c5fe8dfdaf49cd9d45a419582643c, type: 3}
   - {fileID: 11400000, guid: 159d98270ef664972bcd072bfe00d51b, type: 3}
-  - {fileID: 11400000, guid: 728ba09dc8ddf4e899bfd24a0818f9b4, type: 3}
+  - {fileID: 11400000, guid: 377dbee6f711c4b6fbee0e97596445ef, type: 3}
   UIHighlightParent: {fileID: 769862254}
   UIHighlightPrefab: {fileID: 656166329}
   UIMoleculePanel: {fileID: 31534107}

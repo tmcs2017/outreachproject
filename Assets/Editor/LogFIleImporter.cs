@@ -6,6 +6,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using UnityEditor;
 using System.Linq;
+using System;
 
 
 [ScriptedImporter(1, "log")]
@@ -112,8 +113,9 @@ public class LogFileImporter : ScriptedImporter
 
 		public bool ParseLine(MoleculeDefinition molecule, string line) {
 
-			string freqLineRegex = " Frequencies --[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)";
-			string pointsLineRegex = "[ ]+ \\d+[ ]+ \\d+[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)";
+			string freqLineRegex = @" Frequencies --[ ]+(-?\d+.\d+)(?:[ ]+(-?\d+.\d+))?(?:[ ]+(-?\d+.\d+))?";
+
+			string pointsLineRegex = @"[ ]+ \d+[ ]+ \d+[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)(?:[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+))?(?:[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+))?";
 
 			int blockSize = 7 + molecule.Atoms.Count;
 			//var regexCoordLine = "[ ]+(\\d+)[ ]+(\\d+)[ ]+(\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)";
@@ -126,8 +128,15 @@ public class LogFileImporter : ScriptedImporter
 				} else {
 					if (freqIndex == 2) {
 						var match = Regex.Match (line, freqLineRegex);
+						int n = 3;
+						if (!match.Groups [3].Success)
+							n = 2;
+						if (!match.Groups [2].Success)
+							n = 1;
+						Debug.Log ("Found " + n);
 						CurrentModes.Clear ();
-						for (var i = 1; i <= 3; i++) {
+						for (var i = 1; i <= n; i++) {
+							Debug.Log (match.Groups [i].Value);
 							var freq = float.Parse (match.Groups [i].Value);
 							var mode = new VibrationalModeDefinition ();
 							mode.Wavenumber = freq;
@@ -136,9 +145,12 @@ public class LogFileImporter : ScriptedImporter
 					}
 					if (freqIndex >= 7) {
 						var match = Regex.Match (line, pointsLineRegex);
-						for (var i = 0; i <= 2; i++) {
-							Debug.Log (line);
-							Debug.Log (match.Success);
+						int n = 3;
+						if (!match.Groups [7].Success)
+							n = 2;
+						if (!match.Groups [4].Success)
+							n = 1;
+						for (var i = 0; i < n; i++) {
 							var x = float.Parse (match.Groups [1 + i*3].Value);
 							var y = float.Parse (match.Groups [2 + i*3].Value);
 							var z = float.Parse (match.Groups [3 + i*3].Value);
