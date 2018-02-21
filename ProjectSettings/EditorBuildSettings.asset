@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: bc46982126dd04f7691cdf92f3a966e8
+  - enabled: 1
+    path: Assets/Scenes/Molecule Selection.unity
+    guid: da03a3936664e4de294db7e8cbe2f2ea
+  - enabled: 1
+    path: Assets/Scenes/Molecule View.unity
+    guid: bae4d9a4184b6462499a87c58d947269

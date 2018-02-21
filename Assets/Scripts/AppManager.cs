@@ -10,6 +10,9 @@ public class AppManager : ScriptableObject {
 	/// Global instance, use AppManager.Instance to access this object
 	public static AppManager Instance = null;
 
+	[Header("Interscene Variables")]
+	public MoleculeDefinition SelectedMolecule;
+
 	[Header("Audio Input")]
 	public int BinSize = 4096;
 	public float MaximumFrequency = 256f;

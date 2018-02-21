@@ -11,7 +11,6 @@ public class MoleculeSelectionItem : MonoBehaviour {
 
 		this.Value = definition;
 
-
 		var molecule = AppManager.Instance.CreateMolecule (definition);
 		var unityMolecule = AppManager.Instance.CreateMoleculeGraphic(molecule, this.transform.position, this.transform.rotation);
 		unityMolecule.transform.parent = this.transform;

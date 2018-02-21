@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoleculeSelectionManager : MonoBehaviour {
 
@@ -44,5 +45,11 @@ public class MoleculeSelectionManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+		
+
+	public void OpenMoleculeView() {
+		AppManager.Instance.SelectedMolecule = this.SelectedMolecule;
+		SceneManager.LoadScene ("Molecule View");
 	}
 }

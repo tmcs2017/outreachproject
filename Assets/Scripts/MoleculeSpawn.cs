@@ -29,6 +29,9 @@ public class MoleculeSpawn : MonoBehaviour {
 	}
 
 	public void Awake() {
+
+		if (AppManager.Instance.SelectedMolecule != null)
+			Definition = AppManager.Instance.SelectedMolecule;
 		
 		molecule = AppManager.Instance.CreateMolecule (Definition);
 		var moleculeObject = AppManager.Instance.CreateMoleculeGraphic (molecule, this.transform.position, this.transform.rotation);
