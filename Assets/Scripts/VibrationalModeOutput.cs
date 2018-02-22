@@ -6,6 +6,7 @@ using UnityEngine;
 public class VibrationalModeOutput : MonoBehaviour
 {
 	private VibrationalModeGraphic ModeObject;
+	public AudioSource audioSource;
 
 	int Position = 0;
 	private int SampleRate;
@@ -16,32 +17,21 @@ public class VibrationalModeOutput : MonoBehaviour
 		ModeObject = GetComponent<VibrationalModeGraphic> ();
 		SampleRate = AudioSettings.outputSampleRate;
 		Frequency = ModeObject.AudioFrequency;
-		//AudioClip clip = AudioClip.Create("Audio", SampleRate * 2, 1, SampleRate, true, OnAudioRead, OnAudioSetPosition);
-		AudioSource audioSource = GetComponent<AudioSource>();
-		//audioSource.clip = clip;
+		audioSource = GetComponent<AudioSource>();
 		audioSource.pitch = Frequency / 261.6f;
-		audioSource.Play();
+		//audioSource.Play();
 		SetVolume (0);
 	}
 
-	void OnAudioRead(float[] data)
-	{
-		int count = 0;
-		while (count < data.Length)
-		{
-			data[count] = Mathf.Sign(Mathf.Sin(2 * Mathf.PI * Frequency * Position / SampleRate));
-			Position++;
-			count++;
-		}
-	}
-
-	void OnAudioSetPosition(int newPosition)
-	{
-		Position = newPosition;
-	}
-
 	public void Update() {
-		SetVolume (ModeObject.VibrationalMode.Excitation);
+		if (ModeObject.VibrationalMode.Excitation == 1) {
+			audioSource = GetComponent<AudioSource>();
+			audioSource.Play();
+		} else if (ModeObject.VibrationalMode.Excitation > 0.1) {
+			SetVolume (ModeObject.VibrationalMode.Excitation);
+		} else {
+			SetVolume (0);
+		}
 	}
 
 	void SetVolume(float volume) {
