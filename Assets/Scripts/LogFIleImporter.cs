@@ -15,6 +15,8 @@ public class LogFileImporter : ScriptedImporter
 	public string MoleculeName = "";
 	public string MoleculeDescription = "";
 
+    public static int GaussianVersion;
+
 	public override void OnImportAsset(AssetImportContext ctx)
 	{
 		var lines = File.ReadAllLines (ctx.assetPath);
@@ -22,6 +24,11 @@ public class LogFileImporter : ScriptedImporter
 		int modeCoordinates = 0;
 		int maxModeCoordinates = 0;
 
+        if (lines[0].Contains("g16"))
+            GaussianVersion = 16;
+        else if (lines[0].Contains("g09"))
+            GaussianVersion = 9;
+        
 		var coordParser = new CoordinateParser ();
 		var modeParser = new ModeParser ();
 
@@ -122,7 +129,7 @@ public class LogFileImporter : ScriptedImporter
 
 			string pointsLineRegex = @"[ ]+ \d+[ ]+ \d+[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)(?:[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+))?(?:[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+)[ ]+(-?\d+.\d+))?";
 
-			int blockSize = 7 + molecule.Atoms.Count;
+            int blockSize = (GaussianVersion == 16 ? 10 : 7) + molecule.Atoms.Count;
 			//var regexCoordLine = "[ ]+(\\d+)[ ]+(\\d+)[ ]+(\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)[ ]+(-?\\d+.\\d+)";
 
 			bool isLookingForActualInput = index > InitialLines.Length - 1;
@@ -148,7 +155,7 @@ public class LogFileImporter : ScriptedImporter
 							CurrentModes.Add (mode);
 						}
 					}
-					if (freqIndex >= 7) {
+                    if (freqIndex >= (GaussianVersion == 16 ? 10 : 7)) {
 						var match = Regex.Match (line, pointsLineRegex);
 						int n = 3;
 						if (!match.Groups [7].Success)

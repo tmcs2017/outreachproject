@@ -886,6 +886,138 @@ MonoBehaviour:
   NextAxis: {x: 0, y: 0}
   Torque: 0.1
   AlternatingTime: 2
+--- !u!1 &916155320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 916155327}
+  - component: {fileID: 916155326}
+  - component: {fileID: 916155325}
+  - component: {fileID: 916155324}
+  - component: {fileID: 916155323}
+  - component: {fileID: 916155322}
+  - component: {fileID: 916155321}
+  m_Layer: 0
+  m_Name: Sphere (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &916155321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.2
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 8
+  m_CollisionDetection: 0
+--- !u!114 &916155322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3bada7e6cb441f9bd2e08bd98cd3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentAxis: {x: 0, y: 0, z: 0}
+  NextAxis: {x: 0, y: 0}
+  Torque: 0.1
+  AlternatingTime: 2
+--- !u!114 &916155323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40b831b206a74fc986919d8b43dcfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {fileID: 0}
+--- !u!114 &916155324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a4842a223214cf3b0374e4b9e005dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Box: {fileID: 0}
+  Velocity: 1
+  AlternatingTime: 4
+  Radius: 1
+--- !u!23 &916155325
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &916155326
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &916155327
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 916155320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.31, y: 4.27, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168694303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1326,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1599007171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.31, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1261,6 +1393,7 @@ MonoBehaviour:
   - {fileID: 522981235}
   - {fileID: 1703161785}
   - {fileID: 518496679}
+  - {fileID: 916155324}
   BoxSize: {x: 30, y: 15}
   BoxContainmentStrength: 8
   RepulsionStrength: 1
@@ -1295,6 +1428,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 566d341a0ae8a4119b8d55d82e22c899, type: 3}
   - {fileID: 11400000, guid: 159d98270ef664972bcd072bfe00d51b, type: 3}
   - {fileID: 11400000, guid: 377dbee6f711c4b6fbee0e97596445ef, type: 3}
+  - {fileID: 11400000, guid: 7a2006cd0d55f4ee5a523653739b3095, type: 3}
   UIHighlightParent: {fileID: 769862254}
   UIHighlightPrefab: {fileID: 656166329}
   UIMoleculePanel: {fileID: 31534107}
