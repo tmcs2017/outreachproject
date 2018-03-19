@@ -129,4 +129,13 @@ public class AppManager : ScriptableObject {
 		AppManager.Instance.Awake ();
 	}
 
+    public MoleculeSelectionGroup CurrentMoleculeSelection;
+
+    public void OpenMoleculeSelectionScene(MoleculeSelectionGroup group = null) {
+        if (group == null)
+            group = CurrentMoleculeSelection;
+        if(group != null)
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Molecule Selection");
+    }
+
 }

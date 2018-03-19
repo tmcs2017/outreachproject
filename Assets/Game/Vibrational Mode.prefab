@@ -54,7 +54,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 243666254053796452, guid: c96f45169fd2249acabe14a407f9c21a,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 716412413d7b84520b1a579d254c0010, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -111,7 +111,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
