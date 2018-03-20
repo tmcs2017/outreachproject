@@ -114,29 +114,34 @@ public class AppManager : ScriptableObject {
 	}
 
 	private static AppManager FindAppManager() {
-		return Resources.Load<AppManager>("Manager");
+        return UnityEngine.Object.Instantiate<AppManager>(Resources.Load<AppManager>("Manager"));;
 	}
 
-	/// Sets the instance as soon as the game is run
-	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-	static void OnBeforeSceneLoadRuntimeMethod()
-	{
-		AppManager.Instance = AppManager.FindAppManager ();
-		if (AppManager.Instance == null) {
-			Debug.LogError ("Failed to find AppManager at Resources/Manager");
-			Application.Quit ();
-		}
-		AppManager.Instance.Awake ();
-	}
+    private static bool HasInitialised = false;
+
+    /// Sets the instance as soon as the game is run
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        if (!HasInitialised)
+            AppManager.Instance = AppManager.FindAppManager();
+        HasInitialised = true;
+        AppManager.Instance.Awake();
+    }
 
     public MoleculeSelectionGroup CurrentMoleculeGroup;
 
-    public void OpenMoleculeSelectionScene(MoleculeSelectionGroup group = null) {
-        if (group == null)
-            group = CurrentMoleculeGroup;
-        CurrentMoleculeGroup = group;
-        if(CurrentMoleculeGroup != null)
+    public void OpenMoleculeSelectionScene(MoleculeSelectionGroup group) {
+        AppManager.Instance.CurrentMoleculeGroup = group;
+        if (AppManager.Instance.CurrentMoleculeGroup != null)
+        {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Molecule Selection");
+        }
+    }
+
+    public void OpenMoleculeSelectionScene()
+    {
+        OpenMoleculeSelectionScene(AppManager.Instance.CurrentMoleculeGroup);
     }
 
     public void OpenMainMenuScene()
