@@ -35,11 +35,6 @@ public class MoleculeSpawn : MonoBehaviour {
 		
 		molecule = AppManager.Instance.CreateMolecule (Definition);
 		var moleculeObject = AppManager.Instance.CreateMoleculeGraphic (molecule, this.transform.position, this.transform.rotation);
-		moleculeObject.AddComponent<MoleculeCollider> ();
-		moleculeObject.AddComponent<RotateMolecule> ();
-		moleculeObject.AddComponent<MoveMolecule> ();
-		moleculeObject.AddComponent<ZoomMolecule> ();
-
 	}
 
 }

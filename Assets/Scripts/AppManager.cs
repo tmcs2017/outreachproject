@@ -34,7 +34,6 @@ public class AppManager : ScriptableObject {
 
 	void Awake() {
 		NumberOfFrequencies = FrequencyToIndex (MaximumFrequency);
-		Debug.Log (NumberOfFrequencies);
 	}
 
 	[Header("Prefabs")]

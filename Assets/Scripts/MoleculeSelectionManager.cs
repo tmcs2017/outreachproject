@@ -15,7 +15,6 @@ public class MoleculeSelectionManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         RenderSettings.skybox = AppManager.Instance.CurrentMoleculeGroup.Skybox;
-        Debug.Log(AppManager.Instance.CurrentMoleculeGroup);
         DynamicGI.UpdateEnvironment();
 		var box = this.GetComponent<SimulationBox> ();
 		int i = 0;
