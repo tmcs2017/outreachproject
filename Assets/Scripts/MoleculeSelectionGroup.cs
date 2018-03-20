@@ -10,4 +10,6 @@ public class MoleculeSelectionGroup : ScriptableObject {
 
     public List<MoleculeDefinition> Definitions = new List<MoleculeDefinition>();
 
+    public Material Skybox;
+
 }

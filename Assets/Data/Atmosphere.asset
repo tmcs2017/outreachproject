@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dcdda1977e5bd4ee899fa9e9db43bd42, type: 3}
   - {fileID: 11400000, guid: 8e7b2902b9da741549b13505788a4de4, type: 3}
   - {fileID: 11400000, guid: 377dbee6f711c4b6fbee0e97596445ef, type: 3}
+  Skybox: {fileID: 2100000, guid: e7f9c6c395d574a829fbc05c0cff27bd, type: 2}

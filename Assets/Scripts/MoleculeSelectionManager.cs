@@ -7,8 +7,6 @@ public class MoleculeSelectionManager : MonoBehaviour {
 
 	public MoleculeDefinition SelectedMolecule = null;
 
-	public List<MoleculeDefinition> Definitions = new List<MoleculeDefinition>();
-
 	public RectTransform UIHighlightParent;
 	public RectTransform UIHighlightPrefab;
 
@@ -16,9 +14,11 @@ public class MoleculeSelectionManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        RenderSettings.skybox = AppManager.Instance.CurrentMoleculeGroup.Skybox;
+        DynamicGI.UpdateEnvironment();
 		var box = this.GetComponent<SimulationBox> ();
 		int i = 0;
-		foreach (var definition in Definitions) {
+        foreach (var definition in AppManager.Instance.CurrentMoleculeGroup.Definitions) {
 			var particle = box.Particles [i];
 			particle.GetComponent<MoleculeSelectionItem> ().SetMolecule (definition);
 			i++;

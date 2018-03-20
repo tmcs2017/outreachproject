@@ -568,11 +568,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 56eefe20fc535432ebf72a28df87a5d3, type: 2}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: OpenMoleculeSelectionScene
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 11400000, guid: 2d3695a27aed74795ba1d588efafeddc,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: MoleculeSelectionGroup, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

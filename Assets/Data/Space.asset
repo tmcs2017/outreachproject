@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b489052847fa442ba58d024a8b59c0f, type: 3}
+  m_Name: Space
+  m_EditorClassIdentifier: 
+  Definitions:
+  - {fileID: 11400000, guid: 56575b983086e42b287a6cca51416259, type: 3}
+  - {fileID: 11400000, guid: fd7949b0dff3049edb66d9d2b992afc3, type: 3}
+  - {fileID: 11400000, guid: ad499ea3d867d4b59b59922037554dd9, type: 3}
+  - {fileID: 11400000, guid: 958cf0d775d1b441dac05d323ed0e9b4, type: 3}
+  - {fileID: 11400000, guid: 728ba09dc8ddf4e899bfd24a0818f9b4, type: 3}
+  Skybox: {fileID: 2100000, guid: 986418a250c534f3ba0feb49b6301a82, type: 2}

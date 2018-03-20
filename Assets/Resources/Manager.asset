@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e37ef80eb17b4f90b1c49023e379449, type: 3}
   m_Name: Manager
   m_EditorClassIdentifier: 
+  SelectedMolecule: {fileID: 11400000, guid: 566d341a0ae8a4119b8d55d82e22c899, type: 3}
   BinSize: 8192
   MaximumFrequency: 512
-  NumberOfFrequencies: 380
+  NumberOfFrequencies: 190
   MoleculeGraphicPrefab: {fileID: 1316005287596738, guid: 4e6424d6bfbce4506966bf6d3ba6b024,
     type: 2}
   AtomGraphicPrefab: {fileID: 1225283264699070, guid: 8e8c5557443cd426dabbd78e78a8905f,
@@ -21,4 +22,6 @@ MonoBehaviour:
   BondGraphicPrefab: {fileID: 1189306142436058, guid: 9b8b90ab58f8744f3882f3c9f6bf21a3,
     type: 2}
   VibrationalModePrefab: {fileID: 1856148653355708, guid: 13db58ee3234d4855bd2aa493bd2e0d7,
+    type: 2}
+  CurrentMoleculeGroup: {fileID: 11400000, guid: 343ceb878a5c34a479eb804ebbfd95e5,
     type: 2}
